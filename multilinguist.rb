@@ -54,12 +54,28 @@ class Multilinguist
 end
 
 class MathGenius < Multilinguist
+
   def travel_to(country_name)
     super
   end
+
   def report_total(sum)
     sum.inject(0){|sum,x| sum + x }
   end
+
+end
+
+class QuoteCollector < Multilinguist
+  @@all_quotes = []
+
+  def initialize(new_quote)
+    @@all_quotes << new_quote
+  end
+
+  def self.all_quotes
+    @@all_quotes
+  end
+
 end
 
 # Portion 1 of creating an instance of multinguist class
@@ -77,3 +93,15 @@ me.travel_to("India")
 puts me.report_total([6,3,6,68,455,4,467,57,4,534]) # है को कुल 1604
 me.travel_to("Italy")
 puts me.report_total([324,245,6,343647,686545]) # È Il totale 1030767
+
+puts ""
+puts ""
+puts ""
+
+# Portion 3, quote master
+billy = QuoteCollector
+billy.new('Let the rain fall down, and touch my skin - Dirty Curty')
+puts billy.all_quotes
+
+billy.new('Let it wash away, my insecurity - David Ma')
+puts billy.all_quotes
