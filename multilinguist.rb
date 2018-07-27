@@ -81,7 +81,7 @@ end
 # Portion 1 of creating an instance of multinguist class
 tyler = Multilinguist.new
 p tyler
-
+ 
 puts ""
 puts ""
 puts ""
